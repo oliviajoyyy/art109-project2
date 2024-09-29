@@ -11,20 +11,18 @@
 <body>
     <div class="screen"></div>
     <header>
-        <h1>Life is 10% what happens to you and 90% how you react to it.</h1>
+        <h1 id="life-quote">Life is 10% what happens to you and 90% how you react to it.</h1>
     </header>
 
-    
     <main>
-        <section class="image-col">
-            <img src="images/smile-480.png" alt="a yellow smiley face" id="smile"
-                width="480" height="400" srcset="images/smile-480.png 480w,
+        <section class="image-smile">
+            <img src="images/smile-480.png" alt="a yellow smiley face" id="smile" width="480" height="400" srcset="images/smile-480.png 480w,
                      images/smile-960.png 960w,
                      images/smile-1440.png 1440w,
                      images/smile-1920.png 1920w,">
         </section>
 
-        <section class="prompt-container">
+        <div class="prompt-container"> <!-- wrapper -->
 
             <section class="prompt-item" id="prompt1">
                 <p class="description" id="scenario">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea
@@ -49,7 +47,8 @@
                 </section>
             </section>
 
-        </section>
+        </div>
+
     </main>
     <script src="js/main.js"></script>
 </body>
