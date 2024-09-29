@@ -1,9 +1,15 @@
 
 var counter = 0;
+var animationCtr = 2;
 
-var screen = document.querySelector(".screen");
+var screen = document.querySelector(".screen2");
 var currentOpacity = parseFloat(window.getComputedStyle(screen).getPropertyValue("opacity"));
 console.log("current opacity: " + currentOpacity);
+
+var smile = document.getElementById('smile');
+var smileWidth = window.getComputedStyle(smile).getPropertyValue("width");
+var wIncrement = 50;
+console.log("width: " + window.getComputedStyle(smile).getPropertyValue("width"));
 
 const POSITIVE = "positive";
 const NEGATIVE = "negative"
@@ -33,8 +39,6 @@ const prompts = [
     }
 ]
 
-const colors = ["#757568", "#858563", "#9e9e60"];
-
 // start scenario
 document.getElementById('scenario').innerHTML = prompts[counter].scenario;
 document.getElementById('optionA').innerHTML = prompts[counter].optionA;
@@ -44,45 +48,54 @@ document.getElementById('optionB').innerHTML = prompts[counter].optionB;
 let buttons = document.querySelectorAll('.button');
 buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
-        
+        currentOpacity = parseFloat(window.getComputedStyle(screen).getPropertyValue("opacity"));
+        smileWidth = window.getComputedStyle(smile).getPropertyValue("width");
+
         // check which button was clicked
         // then check the status according to that button in this scenario
         if (btn == document.querySelector('#btnA')) {
-            currentOpacity = parseFloat(window.getComputedStyle(screen).getPropertyValue("opacity"));
-            console.log("opacity before clicking: " + currentOpacity);
+            // console.log("opacity before clicking: " + currentOpacity);
             console.log("button A clicked. status: " + prompts[counter].optionA_status);
             if (prompts[counter].optionA_status == POSITIVE) {
-                if (currentOpacity - 0.1 >= 0)
-                    screen.style.opacity = currentOpacity - 0.1; // make image brighter
-                else
-                    screen.style.opacity = 0; // keep opacity from becoming an negative value
+                positiveReaction();
+                // smile.style.width = (parseFloat(window.getComputedStyle(smile).getPropertyValue("width")) + wIncrement) + "px";
+                // // console.log("width after +: " + window.getComputedStyle(smile).getPropertyValue("width"));
+
+                // if (currentOpacity - 0.1 >= 0)
+                //     screen.style.opacity = currentOpacity - 0.1; // make image brighter
+                // else
+                //     screen.style.opacity = 0; // keep opacity from becoming an negative value
 
             } else if (prompts[counter].optionA_status == NEGATIVE) {
-                console.log(currentOpacity + 0.1);
-                if (currentOpacity + 0.1 <= 1)
-                    screen.style.opacity = currentOpacity + 0.1; // make image darker
-                else
-                    screen.style.opacity = 1; // keep opacity from going over 1
+                negativeReaction();
+                // console.log(currentOpacity + 0.1);
+                // if (currentOpacity + 0.1 < 0.8)
+                //     screen.style.opacity = currentOpacity + 0.1; // make image darker
+                // else
+                //     screen.style.opacity = 0.8; // keep opacity from going over 1
             }
-            console.log("opacity after clicking: " + screen.style.opacity);
+            // console.log("opacity after clicking: " + screen.style.opacity);
         } else if (btn == document.querySelector('#btnB')) {
-            currentOpacity = parseFloat(window.getComputedStyle(screen).getPropertyValue("opacity"));
-            console.log("opacity before clicking: " + currentOpacity);
+            // console.log("opacity before clicking: " + currentOpacity);
             console.log("button B clicked. status: " + prompts[counter].optionB_status);
             if (prompts[counter].optionB_status == POSITIVE) {
-                if (currentOpacity - 0.1 >= 0)
-                    screen.style.opacity = currentOpacity - 0.1; // make image brighter
-                else
-                    screen.style.opacity = 0; // keep opacity from becoming an negative value
+                positiveReaction();
+                // smile.style.width = (parseFloat(window.getComputedStyle(smile).getPropertyValue("width")) - wIncrement) + "px";
+
+                // if (currentOpacity - 0.1 >= 0)
+                //     screen.style.opacity = currentOpacity - 0.1; // make image brighter
+                // else
+                //     screen.style.opacity = 0; // keep opacity from becoming an negative value
 
             } else if (prompts[counter].optionB_status == NEGATIVE) {
-                console.log(currentOpacity + 0.1);
-                if (currentOpacity + 0.1 <= 1)
-                    screen.style.opacity = currentOpacity + 0.1; // make image darker
-                else
-                    screen.style.opacity = 1; // keep opacity from going over 1
+                negativeReaction();
+                // console.log(currentOpacity + 0.1);
+                // if (currentOpacity + 0.1 < 0.8)
+                //     screen.style.opacity = currentOpacity + 0.1; // make image darker
+                // else
+                //     screen.style.opacity = 0.8; // keep opacity from going over 1
             }
-            console.log("opacity after clicking: " + screen.style.opacity);
+            // console.log("opacity after clicking: " + screen.style.opacity);
         }
 
         // increment counter and loop back if gone thru all of them
@@ -97,6 +110,23 @@ buttons.forEach((btn) => {
         document.getElementById('optionB').innerHTML = prompts[counter].optionB;
     });
 });
+
+function positiveReaction() {
+    smile.style.width = (parseFloat(window.getComputedStyle(smile).getPropertyValue("width")) + wIncrement) + "px";
+
+    if (currentOpacity - 0.1 >= 0)
+        screen.style.opacity = currentOpacity - 0.1; // make image brighter
+    else
+        screen.style.opacity = 0; // keep opacity from becoming an negative value
+}
+
+function negativeReaction() {
+    smile.style.width = (parseFloat(window.getComputedStyle(smile).getPropertyValue("width")) - wIncrement) + "px";
+    if (currentOpacity + 0.1 < 0.8)
+        screen.style.opacity = currentOpacity + 0.1; // make image darker
+    else
+        screen.style.opacity = 0.8; // keep opacity from going over 1
+}
 
 // document.querySelector('.button').addEventListener('click', function () {
 //     console.log("button clicked");
