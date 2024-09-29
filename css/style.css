@@ -35,23 +35,15 @@ h1 {
 
 img {
     display: inline-block;
-    position: relative;
-    width: 30%;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    width: 20%;
     height: auto;
+    z-index: -1;
 }
 
 .screen {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    background-color: black;
-    opacity: 0.3;
-}
-
-.screen2 {
     background-color: black;
     opacity: 0.3;
     position: absolute;
@@ -64,14 +56,10 @@ img {
 .prompt-container {
     position: relative;
     border: 2px solid black;
-    width: 70vw;
+    width: 50vw;
     height: 450px;
-    left: 15vw;
+    left: 25vw;
     top: 50px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    grid-auto-rows: auto;
 }
 
 .prompt-item {
@@ -120,88 +108,4 @@ img {
 .button:hover {
     background: rgb(129, 191, 194);
     border: 1px solid cadetblue;
-}
-
-#prompt2, #prompt3, #prompt4 {
-    display: none;
-}
-
-@keyframes grow {
-    0% {
-        width: 10%;
-    }
-    100% {
-        width: 20%;
-    }
-}
-
-@keyframes grow1 {
-    0% {
-        width: 20%;
-    }
-    100% {
-        width: 30%;
-    }
-}
-
-@keyframes grow2 {
-    0% {
-        width: 30%;
-    }
-    100% {
-        width: 40%;
-    }
-}
-
-@keyframes grow3 {
-    0% {
-        width: 40%;
-    }
-    100% {
-        width: 50%;
-    }
-}
-
-@keyframes shrink {
-    0% {
-        width: 10%;
-    }
-    100% {
-        width: 20%;
-    }
-}
-
-@keyframes shrink1 {
-    0% {
-        width: 20%;
-    }
-    100% {
-        width: 30%;
-    }
-}
-
-@keyframes shrink2 {
-    0% {
-        width: 30%;
-    }
-    100% {
-        width: 40%;
-    }
-}
-
-@keyframes shrink3 {
-    0% {
-        width: 40%;
-    }
-    100% {
-        width: 50%;
-    }
-}
-
-#smile {
-    /* animation: 1s 1 forwards linear grow; */
-}
-
-.grow {
-    animation: 1s 1 forwards linear grow2;
 }
