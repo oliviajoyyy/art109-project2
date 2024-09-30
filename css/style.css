@@ -17,11 +17,6 @@ html {
     padding: 0;
 }
 
-html,
-body {
-    height: 100%;
-}
-
 body {
     font-size: 1.6rem; /* font-size 1.6rem is 16px */
     line-height: 1.6;
