@@ -48,7 +48,7 @@ const prompts = [
         optionB_status: NEGATIVE
     },
     {
-        scenario: "You get stuck in traffic on your way to work or school due to a car accident that happened ahead. There's no other route for you to go around it, and it's going to cause you to be late.",
+        scenario: "You get stuck in traffic on your way to work or school, and there's no other route for you to go around it. It's going to cause you to be late.",
         optionA: "Continue to stress out and worry about being late for the rest of the drive.",
         optionA_status: NEGATIVE,
         optionB: "De-stress about being late by listening to music or a podcast. You might as well try to relax, you're stuck in the traffic either way.",
