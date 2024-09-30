@@ -11,7 +11,7 @@ var opIncrement = 0.1;
 // smiley face image, its width, and its increment value
 var smile = document.getElementById('smile');
 var smileWidth = window.getComputedStyle(smile).getPropertyValue("width");
-var wIncrement = 50;
+// var wIncrement = 50;
 
 // constants for option status
 const POSITIVE = "positive";
@@ -20,7 +20,7 @@ const NEGATIVE = "negative"
 // an array of json objects of scenarios and options
 const prompts = [
     {
-        scenario: "You've been applying for jobs, but you're not hearing back from most that you've applied to or the interviews you did have weren't successful.",
+        scenario: "You've been applying for jobs, but you're not hearing back from most and the interviews you did have weren't successful.",
         optionA: "You take time to learn new skills or improve your skills relevant to the career path you're interested in. You refine your resume, practice your interviewing skills, and continute to apply for new job opportunies.",
         optionA_status: POSITIVE,
         optionB: "You feel defeated, stay frusrated about it, and lose motivation to continue applying for jobs.",
@@ -34,7 +34,7 @@ const prompts = [
         optionB_status: POSITIVE
     },
     {
-        scenario: "You just gave a speech where you couldn't remember your line or the next topic you wanted to speak about, causing you to stumble through the rest of the speech.",
+        scenario: "You just gave a speech where you couldn't remember the next topic you wanted to speak about, causing you to stumble through the rest of the speech.",
         optionA: "Practice more and improve your public speaking skills for the next speech you give.",
         optionA_status: POSITIVE,
         optionB: "Avoid public speaking in the future and let the embarrassment consume you.",
@@ -109,7 +109,7 @@ buttons.forEach((btn) => {
  * Increases size of img width and brightens the background
  */
 function positiveReaction() {
-    smile.style.width = (smileWidth + wIncrement) + "px";
+    smile.style.width = (smileWidth * 1.1) + "px";
 
     if (currentOpacity - opIncrement >= minOp)
         screen.style.opacity = currentOpacity - opIncrement; // make background brighter
@@ -121,7 +121,7 @@ function positiveReaction() {
  * Decreases size of img width and darkens the background
  */
 function negativeReaction() {
-    smile.style.width = (smileWidth - wIncrement) + "px";
+    smile.style.width = (smileWidth *  0.9) + "px";
 
     if (currentOpacity + opIncrement < maxOp)
         screen.style.opacity = currentOpacity + opIncrement; // make background darker
