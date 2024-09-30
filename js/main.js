@@ -109,7 +109,7 @@ buttons.forEach((btn) => {
  * Increases size of img width and brightens the background
  */
 function positiveReaction() {
-    smile.style.width = (smileWidth * 1.1) + "px";
+    smile.style.width = (smileWidth * 1.1) + "px"; // increase width by 10% of current size
 
     if (currentOpacity - opIncrement >= minOp)
         screen.style.opacity = currentOpacity - opIncrement; // make background brighter
@@ -121,7 +121,7 @@ function positiveReaction() {
  * Decreases size of img width and darkens the background
  */
 function negativeReaction() {
-    smile.style.width = (smileWidth *  0.9) + "px";
+    smile.style.width = (smileWidth *  0.9) + "px"; // decrease width by 10% of current size
 
     if (currentOpacity + opIncrement < maxOp)
         screen.style.opacity = currentOpacity + opIncrement; // make background darker
