@@ -21,7 +21,7 @@ const NEGATIVE = "negative"
 const prompts = [
     {
         scenario: "You've been applying for jobs, but you're not hearing back from most and the interviews you did have weren't successful.",
-        optionA: "You take time to learn new skills or improve your skills relevant to the career path you're interested in. You refine your resume, practice your interviewing skills, and continute to apply for new job opportunies.",
+        optionA: "You take time to improve your skills and learn new skills. You refine your resume, practice your interviewing skills, and continute to apply for new job opportunies.",
         optionA_status: POSITIVE,
         optionB: "You feel defeated, stay frusrated about it, and lose motivation to continue applying for jobs.",
         optionB_status: NEGATIVE
