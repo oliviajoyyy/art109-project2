@@ -113,7 +113,7 @@ img {
     border: 2px solid black;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 270px;
+    grid-template-rows: 290px;
 }
 
 .option-item {
